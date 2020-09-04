@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CommandLineParser
+namespace IntrepidProducts.CommandLineParser
 {
     public class ArgumentKeyValues
     {

@@ -1,8 +1,7 @@
 using System;
-using CommandLineParser;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Test.CommandLineParser
+namespace IntrepidProducts.CommandLineParser.Tests
 {
     [TestClass]
     public class ArgumentKeyValuesTest

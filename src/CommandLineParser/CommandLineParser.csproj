@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>IntrepidProducts.CommandLineParser</AssemblyName>
+    <RootNamespace>IntrepidProducts.CommandLineParser</RootNamespace>
   </PropertyGroup>
 
 </Project>

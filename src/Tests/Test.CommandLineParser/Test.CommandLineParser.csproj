@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>IntrepidProducts.CommandLineParser.Tests</AssemblyName>
+
+    <RootNamespace>IntrepidProducts.CommandLineParser.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
