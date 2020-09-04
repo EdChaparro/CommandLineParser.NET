@@ -69,6 +69,8 @@ namespace CommandLineParser
             return value;
         }
 
+        public IReadOnlyDictionary<string, string> Args => _args;
+
         public string this[string key] => (_args.ContainsKey(key)) ? _args[key] : null;
     }
 }
