@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandLineParser", "src\CommandLineParser\CommandLineParser.csproj", "{896DCA8C-467C-4CAC-897B-79856BCABCD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{395091A4-4109-4971-9AD7-31E4E746B7F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.CommandLineParser", "src\Tests\Test.CommandLineParser\Test.CommandLineParser.csproj", "{AD96FE56-8221-401D-B1A8-C68D6D557D64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{896DCA8C-467C-4CAC-897B-79856BCABCD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896DCA8C-467C-4CAC-897B-79856BCABCD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896DCA8C-467C-4CAC-897B-79856BCABCD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896DCA8C-467C-4CAC-897B-79856BCABCD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD96FE56-8221-401D-B1A8-C68D6D557D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD96FE56-8221-401D-B1A8-C68D6D557D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD96FE56-8221-401D-B1A8-C68D6D557D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD96FE56-8221-401D-B1A8-C68D6D557D64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD96FE56-8221-401D-B1A8-C68D6D557D64} = {395091A4-4109-4971-9AD7-31E4E746B7F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19F14EBF-53CA-4CBE-9EFA-899013522FDA}
+	EndGlobalSection
+EndGlobal
