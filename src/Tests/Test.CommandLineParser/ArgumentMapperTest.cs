@@ -84,5 +84,19 @@ namespace IntrepidProducts.CommandLineParser.Tests
 
             Assert.AreEqual(TestArgumentEnum.Enum3, target.Key6);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ShouldThrowArgumentExceptionWhenEnumValueIsInvalid()
+        {
+            var args = new[]
+            {
+                "--key6=Foo"
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
+
+            Assert.AreEqual(TestArgumentEnum.Enum3, target.Key6);
+        }
     }
 }
