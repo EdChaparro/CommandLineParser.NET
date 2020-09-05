@@ -95,8 +95,6 @@ namespace IntrepidProducts.CommandLineParser.Tests
             };
 
             var target = ArgumentMapper.Map<TestTarget>(args);
-
-            Assert.AreEqual(TestArgumentEnum.Enum3, target.Key6);
         }
 
         [TestMethod]
