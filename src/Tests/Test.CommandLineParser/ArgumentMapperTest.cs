@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IntrepidProducts.CommandLineParser.Tests
@@ -31,6 +32,18 @@ namespace IntrepidProducts.CommandLineParser.Tests
             var target = ArgumentMapper.Map<TestTarget>(args);
 
             Assert.AreEqual(99, target.Key3);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(FormatException))]
+        public void ShouldThrowFormatExceptionOnArgumentTypeMismatch()
+        {
+            var args = new[]
+            {
+                "--key3=3.14"   //Decimal value won't map to Integer property
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
         }
 
         [TestMethod]
@@ -71,6 +84,5 @@ namespace IntrepidProducts.CommandLineParser.Tests
 
             Assert.AreEqual(TestArgumentEnum.Enum3, target.Key6);
         }
-
     }
 }

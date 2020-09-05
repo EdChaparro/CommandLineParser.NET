@@ -84,7 +84,7 @@ namespace IntrepidProducts.CommandLineParser
             catch (Exception e)
             {
                 var message = string.Format("Conversion to {0} is not implemented", propertyType.Name);
-                throw new NotImplementedException(message, e);
+                throw new FormatException(message, e);
             }
 
             return result;
