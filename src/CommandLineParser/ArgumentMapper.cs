@@ -52,7 +52,13 @@ namespace IntrepidProducts.CommandLineParser
                 var propertyInfo = propertyAttr.Key;
                 var attribute = propertyAttr.Value;
 
+                if (!keyValues.ContainsKey(attribute.Key))
+                {
+                    continue;
+                }
+
                 var argument = keyValues[attribute.Key];
+
                 var value = GetValue(argument, propertyInfo.PropertyType, attribute.DefaultValue);
                 propertyInfo.SetValue(target, value);
             }

@@ -6,7 +6,7 @@ namespace IntrepidProducts.CommandLineParser.Tests
     public class ArgumentMapperTest
     {
         [TestMethod]
-        public void ShouldMapArgumentsToTarget()
+        public void ShouldMapArgumentsToStringProperties()
         {
             var args = new []
             {
@@ -19,5 +19,58 @@ namespace IntrepidProducts.CommandLineParser.Tests
             Assert.AreEqual("value1", target.Key1);
             Assert.AreEqual("value2", target.Key2);
         }
+
+        [TestMethod]
+        public void ShouldMapArgumentsToIntegerProperties()
+        {
+            var args = new[]
+            {
+                "--key3=99"
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
+
+            Assert.AreEqual(99, target.Key3);
+        }
+
+        [TestMethod]
+        public void ShouldMapArgumentsToDoubleProperties()
+        {
+            var args = new[]
+            {
+                "--key4=3.14"
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
+
+            Assert.AreEqual(3.14D, target.Key4);
+        }
+
+        [TestMethod]
+        public void ShouldMapArgumentsToDecimalProperties()
+        {
+            var args = new[]
+            {
+                "--key5=3.14"
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
+
+            Assert.AreEqual(3.14M, target.Key5);
+        }
+
+        [TestMethod]
+        public void ShouldMapArgumentsToEnumProperties()
+        {
+            var args = new[]
+            {
+                "--key6=Enum3"
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
+
+            Assert.AreEqual(TestArgumentEnum.Enum3, target.Key6);
+        }
+
     }
 }
