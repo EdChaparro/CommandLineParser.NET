@@ -111,5 +111,19 @@ namespace IntrepidProducts.CommandLineParser.Tests
 
             Assert.AreEqual(new DateTime(1776, 07, 4), target.Key7);
         }
+
+        [TestMethod]
+        public void ShouldMapArgumentsToBooleanProperties()
+        {
+            var args = new[]
+            {
+                "--key8=True"
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
+
+            Assert.IsTrue(target.Key8);
+        }
+
     }
 }

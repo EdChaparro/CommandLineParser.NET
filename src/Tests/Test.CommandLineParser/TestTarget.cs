@@ -29,8 +29,11 @@ namespace IntrepidProducts.CommandLineParser.Tests
         [CommandLineArgumentProperty("key6", null, "Enum Key")]
         public TestArgumentEnum Key6 { get; set; }
 
-        [CommandLineArgumentProperty("key7", null, "Enum Key")]
+        [CommandLineArgumentProperty("key7", null, "DateTime Key")]
         public DateTime Key7 { get; set; }
+
+        [CommandLineArgumentProperty("key8", null, "Boolean Key")]
+        public bool Key8 { get; set; }
 
         public bool Validate()
         {
