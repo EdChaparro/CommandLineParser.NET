@@ -1,3 +1,5 @@
+using System;
+
 namespace IntrepidProducts.CommandLineParser.Tests
 {
     public enum TestArgumentEnum
@@ -26,6 +28,9 @@ namespace IntrepidProducts.CommandLineParser.Tests
 
         [CommandLineArgumentProperty("key6", null, "Enum Key")]
         public TestArgumentEnum Key6 { get; set; }
+
+        [CommandLineArgumentProperty("key7", null, "Enum Key")]
+        public DateTime Key7 { get; set; }
 
         public bool Validate()
         {

@@ -98,5 +98,18 @@ namespace IntrepidProducts.CommandLineParser.Tests
 
             Assert.AreEqual(TestArgumentEnum.Enum3, target.Key6);
         }
+
+        [TestMethod]
+        public void ShouldMapArgumentsToDateTimeProperties()
+        {
+            var args = new[]
+            {
+                "--key7=7/4/1776"
+            };
+
+            var target = ArgumentMapper.Map<TestTarget>(args);
+
+            Assert.AreEqual(new DateTime(1776, 07, 4), target.Key7);
+        }
     }
 }
