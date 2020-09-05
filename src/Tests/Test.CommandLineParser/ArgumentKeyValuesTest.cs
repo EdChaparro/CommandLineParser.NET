@@ -17,14 +17,14 @@ namespace IntrepidProducts.CommandLineParser.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void ShouldValidateArgumentHasMatchingDoubleQuotes()
         {
-            var argKv = new ArgumentKeyValues(new string[] { "--ValidKey=\"SomeValue" });
+            var argKv = new ArgumentKeyValues(new string[] { "--ValidKey=\"MissingClosingQuote" });
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void ShouldValidateArgumentHasMatchingSingleQuotes()
         {
-            var argKv = new ArgumentKeyValues(new string[] { "--ValidKey=SomeValue'" });
+            var argKv = new ArgumentKeyValues(new string[] { "--ValidKey=MissingOpeningQuote'" });
         }
 
         [TestMethod]
