@@ -122,6 +122,5 @@ namespace IntrepidProducts.CommandLineParser.Tests
 
             Assert.IsTrue(target.Key8);
         }
-
     }
 }
