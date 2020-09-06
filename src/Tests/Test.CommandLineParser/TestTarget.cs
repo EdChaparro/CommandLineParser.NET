@@ -9,12 +9,13 @@ namespace IntrepidProducts.CommandLineParser.Tests
         Enum3 = 3
     }
 
+    //Altering this class may cause tests to fail
     internal class TestTarget : IArgumentTarget
     {
-        [CommandLineArgumentProperty("key1", null, "First Key")]
+        [CommandLineArgumentProperty("key1", "Foo", "First Key")]
         public string Key1 { get; set; }
 
-        [CommandLineArgumentProperty("key2", null, "Second Key")]
+        [CommandLineArgumentProperty("key2", "Bar", "Second Key")]
         public string Key2 { get; set; }
 
         [CommandLineArgumentProperty("key3", null, "Int Key")]

@@ -122,5 +122,17 @@ namespace IntrepidProducts.CommandLineParser.Tests
 
             Assert.IsTrue(target.Key8);
         }
+
+        [TestMethod]
+        public void ShouldSetDefaultWhenArgumentsNotProvided()
+        {
+            var args1 = new[] {"--key2=value2"};
+            var target1 = ArgumentMapper.Map<TestTarget>(args1);
+            Assert.AreEqual("Foo", target1.Key1);
+
+            var args2 = new[] { "--key1=value1" };
+            var target2 = ArgumentMapper.Map<TestTarget>(args2);
+            Assert.AreEqual("Bar", target2.Key2);
+        }
     }
 }

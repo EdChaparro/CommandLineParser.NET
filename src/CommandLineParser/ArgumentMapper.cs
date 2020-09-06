@@ -21,6 +21,32 @@ namespace IntrepidProducts.CommandLineParser
             return target;
         }
 
+        private static void InjectArgumentValues(IReadOnlyDictionary<string, string> keyValues, IArgumentTarget target)
+        {
+            var argumentProperties = GetTargetProperties(target);
+
+            foreach (var propertyAttr in argumentProperties)
+            {
+                var propertyInfo = propertyAttr.Key;
+                var attribute = propertyAttr.Value;
+
+                if (!keyValues.ContainsKey(attribute.Key))
+                {
+                    if (attribute.DefaultValue != null)
+                    {
+                        propertyInfo.SetValue(target, attribute.DefaultValue);
+                    }
+
+                    continue;
+                }
+
+                var argument = keyValues[attribute.Key];
+
+                var value = GetValue(argument, propertyInfo.PropertyType, attribute.DefaultValue);
+                propertyInfo.SetValue(target, value);
+            }
+        }
+
         private static IReadOnlyDictionary<PropertyInfo, CommandLineArgumentPropertyAttribute>
             GetTargetProperties(IArgumentTarget target)
         {
@@ -37,31 +63,10 @@ namespace IntrepidProducts.CommandLineParser
                     continue;
                 }
 
-                argumentProperties.Add(propertyInfo, (CommandLineArgumentPropertyAttribute) attributes[0]);
+                argumentProperties.Add(propertyInfo, (CommandLineArgumentPropertyAttribute)attributes[0]);
             }
 
             return argumentProperties;
-        }
-
-        private static void InjectArgumentValues(IReadOnlyDictionary<string, string> keyValues, IArgumentTarget target)
-        {
-            var argumentProperties = GetTargetProperties(target);
-
-            foreach (var propertyAttr in argumentProperties)
-            {
-                var propertyInfo = propertyAttr.Key;
-                var attribute = propertyAttr.Value;
-
-                if (!keyValues.ContainsKey(attribute.Key))
-                {
-                    continue;
-                }
-
-                var argument = keyValues[attribute.Key];
-
-                var value = GetValue(argument, propertyInfo.PropertyType, attribute.DefaultValue);
-                propertyInfo.SetValue(target, value);
-            }
         }
 
         private static object GetValue(string argument, Type propertyType, object defaultValue)
