@@ -8,6 +8,8 @@
     <AssemblyName>IntrepidProducts.CommandLineParser.Tests</AssemblyName>
 
     <RootNamespace>IntrepidProducts.CommandLineParser.Tests</RootNamespace>
+
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
