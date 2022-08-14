@@ -43,7 +43,7 @@ namespace IntrepidProducts.CommandLineParser.Tests
                 "--key3=3.14"   //Decimal value won't map to Integer property
             };
 
-            var target = ArgumentMapper.Map<TestTarget>(args);
+            ArgumentMapper.Map<TestTarget>(args);
         }
 
         [TestMethod]
@@ -94,7 +94,7 @@ namespace IntrepidProducts.CommandLineParser.Tests
                 "--key6=Foo"
             };
 
-            var target = ArgumentMapper.Map<TestTarget>(args);
+            ArgumentMapper.Map<TestTarget>(args);
         }
 
         [TestMethod]
